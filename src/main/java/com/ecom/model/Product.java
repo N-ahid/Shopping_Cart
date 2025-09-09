@@ -14,13 +14,14 @@ import lombok.Setter;
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
-    @Column
+    @Column(length = 500)
     private String title;
 
-    @Column
+    @Column(length = 5000)
     private String description;
+
     private String category;
 
     private Double price;
