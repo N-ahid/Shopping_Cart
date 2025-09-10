@@ -19,7 +19,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.security.Principal;
 import java.util.List;
-
+@ControllerAdvice
 @Controller
 @RequestMapping("/user")
 public class UserController {

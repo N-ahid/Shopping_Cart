@@ -26,7 +26,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.security.Principal;
 import java.util.List;
-
+@ControllerAdvice
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
@@ -81,7 +81,7 @@ public class AdminController {
 
     @GetMapping("/category")
     public String category(Model m, @RequestParam(name = "pageNo", defaultValue = "0") Integer pageNo,
-                           @RequestParam(name = "pageSize", defaultValue = "3") Integer pageSize) {
+                           @RequestParam(name = "pageSize", defaultValue = "10") Integer pageSize) {
         // m.addAttribute("categorys", categoryService.getAllCategory());
         Page<Category> page = categoryService.getAllCategorPagination(pageNo, pageSize);
         List<Category> categorys = page.getContent();
@@ -208,7 +208,7 @@ public class AdminController {
     @GetMapping("/products")
     public String loadViewProduct(Model m, @RequestParam(defaultValue = "") String ch,
                                   @RequestParam(name = "pageNo", defaultValue = "0") Integer pageNo,
-                                  @RequestParam(name = "pageSize", defaultValue = "4") Integer pageSize) {
+                                  @RequestParam(name = "pageSize", defaultValue = "10") Integer pageSize) {
 
 //		List<Product> products = null;
 //		if (ch != null && ch.length() > 0) {

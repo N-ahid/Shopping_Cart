@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
           integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
-<!--    <link ref="stylesheet" href="/css/style.css">-->
+    <!--    <link ref="stylesheet" href="/css/style.css">-->
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
@@ -76,9 +76,11 @@
 
                     <li class="nav-item dropdown"><a
                             class="nav-link dropdown-toggle active" href="#" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false"> <i
-                            class="fa-solid fa-user"></i> [[${user.name}]]
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <img th:src="@{'/img/profile_img/'+${user.profileImage}}" alt="User Image"
+                                                                                  style="width: 30px; height: 30px; object-fit: cover; border-radius: 50%; margin-right: 5px;"> [[${user.name}]]
                     </a>
+
                         <ul class="dropdown-menu">
                             <li th:if="${user.role=='ROLE_USER'}"><a
                                     class="dropdown-item" href="/user/profile">Profile</a></li>
